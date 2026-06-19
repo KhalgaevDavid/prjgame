@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bi36r70v54ufc"]
 
+[ext_resource type="Script" uid="uid://dimdx7afyri6v" path="res://weight.gd" id="1_4ueci"]
 [ext_resource type="Texture2D" uid="uid://ceuo0c4g3kxb4" path="res://assets/weight.png" id="1_vqb4o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8kxd3"]
@@ -8,9 +9,11 @@ size = Vector2(32, 35)
 [sub_resource type="LabelSettings" id="LabelSettings_3dxm6"]
 font_size = 8
 
-[node name="Weight" type="RigidBody2D" unique_id=686757871]
+[node name="Weight" type="RigidBody2D" unique_id=686757871 groups=["Pickable"]]
 collision_layer = 2
+input_pickable = true
 mass = 0.001
+script = ExtResource("1_4ueci")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1244206093]
 scale = Vector2(0.25, 0.25)

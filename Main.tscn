@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bir30s8sx21tm"]
 
+[ext_resource type="Script" uid="uid://dl544crd4e25e" path="res://main.gd" id="1_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://ctcahmejvpesq" path="res://Scales.tscn" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://buo5usmy57fj4" path="res://Box.tscn" id="2_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://bi36r70v54ufc" path="res://Weight_1.tscn" id="3_fos0i"]
 
 [node name="Main" type="Node" unique_id=1513999430]
+script = ExtResource("1_cm0pq")
 
 [node name="Scales" parent="." unique_id=1481644881 instance=ExtResource("1_r0du0")]
 position = Vector2(511, 647)
@@ -14,3 +16,8 @@ position = Vector2(356, 408)
 
 [node name="Weight" parent="." unique_id=686757871 instance=ExtResource("3_fos0i")]
 position = Vector2(677, 431)
+active = true
+
+[node name="Weight2" parent="." unique_id=1118370176 instance=ExtResource("3_fos0i")]
+position = Vector2(452, 420)
+active = true
