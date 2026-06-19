@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://ctcahmejvpesq"]
+
+[ext_resource type="Script" uid="uid://nlx21pcm00bw" path="res://scales.gd" id="1_gjmbn"]
+[ext_resource type="Texture2D" uid="uid://b5b52g7wb3l5j" path="res://assets/весы_пр.png" id="1_w61ta"]
+[ext_resource type="Texture2D" uid="uid://c2mkytunusvk0" path="res://assets/весы_лв.png" id="2_gjmbn"]
+[ext_resource type="Texture2D" uid="uid://b2i4ibpk4txb0" path="res://assets/весы.png" id="3_v1k3y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tlm4k"]
+radius = 13.0
+height = 249.99998
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1k3y"]
+size = Vector2(251, 18)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mg5fl"]
+radius = 14.0
+height = 122.000015
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjmbn"]
+size = Vector2(122, 20)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gjmbn"]
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Scales" type="Node2D" unique_id=1481644881]
+script = ExtResource("1_gjmbn")
+
+[node name="Left" type="StaticBody2D" parent="." unique_id=1916211026]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Left" unique_id=931409230]
+position = Vector2(-122, -117)
+texture = ExtResource("2_gjmbn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left" unique_id=1456016029]
+position = Vector2(-119, -125)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_tlm4k")
+
+[node name="LeftArea" type="Area2D" parent="Left" unique_id=359035585]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left/LeftArea" unique_id=1948615056]
+position = Vector2(-119.5, -133)
+shape = SubResource("RectangleShape2D_v1k3y")
+
+[node name="Right" type="StaticBody2D" parent="." unique_id=1099176473]
+
+[node name="Sprite2D" type="Sprite2D" parent="Right" unique_id=878093688]
+position = Vector2(180, -107)
+texture = ExtResource("1_w61ta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right" unique_id=1746998855]
+position = Vector2(181, -123)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_mg5fl")
+
+[node name="RightArea" type="Area2D" parent="Right" unique_id=375519338]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right/RightArea" unique_id=196278282]
+position = Vector2(181, -130)
+shape = SubResource("RectangleShape2D_gjmbn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1249069290]
+position = Vector2(0, -273)
+texture = ExtResource("3_v1k3y")
+
+[node name="Label" type="Label" parent="." unique_id=628698073]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -392.0
+offset_right = 182.0
+offset_bottom = -304.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_gjmbn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Left/LeftArea" to="." method="left_body_entered"]
+[connection signal="body_exited" from="Left/LeftArea" to="." method="left_body_exited"]
+[connection signal="body_entered" from="Right/RightArea" to="." method="right_body_entered"]
+[connection signal="body_exited" from="Right/RightArea" to="." method="right_body_excited"]
