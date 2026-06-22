@@ -26,6 +26,7 @@ func _input_event(viewport, event, idx) -> void:
 func pick():
 	if active:
 		captured = true
+		rotation = 0
 
 func drop():
 	captured = false

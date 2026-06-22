@@ -6,16 +6,20 @@ var captured_body = null
 func _ready() -> void:
 	for node in get_tree().get_nodes_in_group("Pickable"):
 		node.connect("clicked", _on_pickable_clicked.bind(node))
+		print(node)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
  
+
 func _on_pickable_clicked(body):
 	if !captured_body:
 		captured_body = body
 		captured_body.pick()
+		print("pick ", body)
+
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
