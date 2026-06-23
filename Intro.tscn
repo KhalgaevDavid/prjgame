@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dlg0y07dbmyu5"]
+
+[ext_resource type="Script" uid="uid://dnw4t8gahlkrh" path="res://intro.gd" id="1_gjrx4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4kxuq"]
+font_size = 64
+
+[node name="Intro" type="Control" unique_id=408000121]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gjrx4")
+
+[node name="Button" type="Button" parent="." unique_id=1725330867]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.822
+anchor_top = 0.81200004
+anchor_right = 0.822
+anchor_bottom = 0.81200004
+offset_left = -136.94403
+offset_top = -62.176025
+offset_right = 138.05597
+offset_bottom = 61.823975
+text = "next
+"
+
+[node name="Label" type="Label" parent="." unique_id=704951312]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -92.0
+offset_right = 256.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "test text"
+label_settings = SubResource("LabelSettings_4kxuq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="next_scene"]

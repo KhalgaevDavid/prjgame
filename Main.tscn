@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dl544crd4e25e" path="res://main.gd" id="1_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://ctcahmejvpesq" path="res://Scales.tscn" id="1_r0du0"]
-[ext_resource type="PackedScene" uid="uid://buo5usmy57fj4" path="res://Box.tscn" id="2_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://bi36r70v54ufc" path="res://weights/Weight_1.tscn" id="3_fos0i"]
 [ext_resource type="Texture2D" uid="uid://cynrff6ojansm" path="res://icon.svg" id="5_fos0i"]
 [ext_resource type="PackedScene" uid="uid://b2nplwi1dsrn" path="res://weights/Weight_2.tscn" id="6_trn2v"]
@@ -10,7 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://cibc86diatw7f" path="res://weights/Weight_10.tscn" id="8_wkp8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
-size = Vector2(1214, 58)
+size = Vector2(1243, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mti6b"]
+size = Vector2(45, 732.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm1bc"]
+size = Vector2(1244, 32)
 
 [node name="Main" type="Node" unique_id=1513999430]
 script = ExtResource("1_cm0pq")
@@ -18,33 +23,44 @@ script = ExtResource("1_cm0pq")
 [node name="Scales" parent="." unique_id=1481644881 instance=ExtResource("1_r0du0")]
 position = Vector2(511, 630)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1032866388]
+[node name="Wall" type="StaticBody2D" parent="." unique_id=1032866388]
 position = Vector2(136, 685)
+collision_layer = 3
+collision_mask = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1448277817]
+[node name="Sprite2D" type="Sprite2D" parent="Wall" unique_id=1448277817]
 position = Vector2(453, 9)
 scale = Vector2(9.609375, 1)
 texture = ExtResource("5_fos0i")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=33862713]
-position = Vector2(458, -26)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=33862713]
+position = Vector2(443.5, -26)
 shape = SubResource("RectangleShape2D_4kxuq")
 
-[node name="Box" parent="." unique_id=1834495347 instance=ExtResource("2_cm0pq")]
-position = Vector2(347, 452)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Wall" unique_id=1250592354]
+position = Vector2(1040, -362.25)
+shape = SubResource("RectangleShape2D_mti6b")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Wall" unique_id=86168301]
+position = Vector2(-157.5, -353.5)
+shape = SubResource("RectangleShape2D_mti6b")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Wall" unique_id=1486483856]
+position = Vector2(441, -701)
+shape = SubResource("RectangleShape2D_mm1bc")
 
 [node name="Weight" parent="." unique_id=686757871 instance=ExtResource("3_fos0i")]
-position = Vector2(100, 565)
+position = Vector2(123, 604)
 active = true
 
 [node name="Weight2" parent="." unique_id=966107690 instance=ExtResource("6_trn2v")]
-position = Vector2(143, 560)
+position = Vector2(164, 598)
 active = true
 
 [node name="Weight4" parent="." unique_id=346122551 instance=ExtResource("8_wkp8b")]
-position = Vector2(259, 543)
+position = Vector2(270, 581)
 active = true
 
 [node name="Weight3" parent="." unique_id=1124429163 instance=ExtResource("7_03owx")]
-position = Vector2(196, 552)
+position = Vector2(212, 590)
 active = true
