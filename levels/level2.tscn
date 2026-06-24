@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dawdtqf5716i5"]
+
+[ext_resource type="Script" uid="uid://dl544crd4e25e" path="res://levels/levels.gd" id="1_76ugp"]
+[ext_resource type="PackedScene" uid="uid://ctcahmejvpesq" path="res://Scales.tscn" id="2_e8p81"]
+[ext_resource type="Texture2D" uid="uid://cynrff6ojansm" path="res://icon.svg" id="3_55gdq"]
+[ext_resource type="PackedScene" uid="uid://bi36r70v54ufc" path="res://weights/Weight_1.tscn" id="4_crte6"]
+[ext_resource type="PackedScene" uid="uid://b2nplwi1dsrn" path="res://weights/Weight_2.tscn" id="5_hq01p"]
+[ext_resource type="PackedScene" uid="uid://cibc86diatw7f" path="res://weights/Weight_10.tscn" id="6_fjysh"]
+[ext_resource type="PackedScene" uid="uid://blidhacohsjf8" path="res://weights/Weight_5.tscn" id="7_bcewn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
+size = Vector2(1243, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mti6b"]
+size = Vector2(45, 732.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm1bc"]
+size = Vector2(1244, 32)
+
+[node name="Main" type="Node" unique_id=1513999430]
+script = ExtResource("1_76ugp")
+next_level = "res://levels/level2.tscn"
+
+[node name="Scales" parent="." unique_id=1481644881 instance=ExtResource("2_e8p81")]
+position = Vector2(511, 630)
+
+[node name="Wall" type="StaticBody2D" parent="." unique_id=1032866388]
+position = Vector2(136, 685)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall" unique_id=1448277817]
+position = Vector2(453, 9)
+scale = Vector2(9.609375, 1)
+texture = ExtResource("3_55gdq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=33862713]
+position = Vector2(443.5, -26)
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Wall" unique_id=1250592354]
+position = Vector2(1040, -362.25)
+shape = SubResource("RectangleShape2D_mti6b")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Wall" unique_id=86168301]
+position = Vector2(-157.5, -353.5)
+shape = SubResource("RectangleShape2D_mti6b")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Wall" unique_id=1486483856]
+position = Vector2(441, -701)
+shape = SubResource("RectangleShape2D_mm1bc")
+
+[node name="Weight" parent="." unique_id=686757871 instance=ExtResource("4_crte6")]
+position = Vector2(123, 604)
+active = true
+
+[node name="Weight2" parent="." unique_id=966107690 instance=ExtResource("5_hq01p")]
+position = Vector2(164, 598)
+active = true
+
+[node name="Weight4" parent="." unique_id=346122551 instance=ExtResource("6_fjysh")]
+position = Vector2(270, 581)
+active = true
+
+[node name="Weight3" parent="." unique_id=1124429163 instance=ExtResource("7_bcewn")]
+position = Vector2(212, 590)
+active = true
+
+[node name="NextSceneBtn" type="Button" parent="." unique_id=824980679]
+offset_left = 920.0
+offset_top = 493.0
+offset_right = 1110.0
+offset_bottom = 577.0
+text = "след."
+
+[connection signal="pressed" from="NextSceneBtn" to="." method="next_scene"]

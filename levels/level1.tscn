@@ -17,8 +17,21 @@ size = Vector2(45, 732.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm1bc"]
 size = Vector2(1244, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62yky"]
+size = Vector2(129, 127)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4kxuq"]
+font_size = 64
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwqyf"]
+size = Vector2(65, 64)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mti6b"]
+font_size = 32
+
 [node name="Main" type="Node" unique_id=1513999430]
 script = ExtResource("1_8hd6v")
+next_level = "res://levels/level2.tscn"
 
 [node name="Scales" parent="." unique_id=1481644881 instance=ExtResource("2_045es")]
 position = Vector2(511, 630)
@@ -64,3 +77,56 @@ active = true
 [node name="Weight3" parent="." unique_id=1124429163 instance=ExtResource("7_8bcou")]
 position = Vector2(212, 590)
 active = true
+
+[node name="Box1" type="RigidBody2D" parent="." unique_id=1885328269]
+position = Vector2(331, 417)
+collision_layer = 2
+mass = 0.1
+
+[node name="Sprite2D" type="Sprite2D" parent="Box1" unique_id=1528842901]
+texture = ExtResource("3_omn1t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box1" unique_id=917284610]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_62yky")
+
+[node name="Label" type="Label" parent="Box1" unique_id=577280036]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 65.0
+offset_bottom = 115.0
+text = "100"
+label_settings = SubResource("LabelSettings_4kxuq")
+horizontal_alignment = 1
+
+[node name="Box2" type="RigidBody2D" parent="." unique_id=1117152207]
+collision_layer = 2
+mass = 0.086
+
+[node name="Sprite2D" type="Sprite2D" parent="Box2" unique_id=908709099]
+position = Vector2(667, 447)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_omn1t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box2" unique_id=944791460]
+position = Vector2(667.5, 447)
+shape = SubResource("RectangleShape2D_qwqyf")
+
+[node name="Label" type="Label" parent="Box2" unique_id=59439949]
+offset_left = 635.0
+offset_top = 415.0
+offset_right = 700.0
+offset_bottom = 480.0
+text = "86"
+label_settings = SubResource("LabelSettings_mti6b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextSceneBtn" type="Button" parent="." unique_id=824980679]
+offset_left = 920.0
+offset_top = 493.0
+offset_right = 1110.0
+offset_bottom = 577.0
+text = "след."
+
+[connection signal="pressed" from="NextSceneBtn" to="." method="next_scene"]
