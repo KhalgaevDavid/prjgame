@@ -25,6 +25,12 @@ height = 122.000015
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjmbn"]
 size = Vector2(122, 20)
 
+[sub_resource type="LabelSettings" id="LabelSettings_mti6b"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4kxuq"]
+font_color = Color(0, 0, 0, 1)
+
 [node name="Scales" type="Node2D" unique_id=1481644881]
 script = ExtResource("1_gjmbn")
 
@@ -104,13 +110,49 @@ vertical_alignment = 1
 position = Vector2(0, -273)
 texture = ExtResource("3_v1k3y")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=2125235516]
+[node name="Pane" type="Node2D" parent="." unique_id=2125235516]
 position = Vector2(68, -312)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1982106653]
-position = Vector2(-195, -223)
-scale = Vector2(0.5125, 0.25666666)
+[node name="Sprite2D" type="Sprite2D" parent="Pane" unique_id=1982106653]
+position = Vector2(20.493484, -68.775955)
+rotation = -1.5707964
+scale = Vector2(0.27335134, 0.3833116)
 texture = ExtResource("5_v1k3y")
+
+[node name="PaneCtrl" type="Control" parent="." unique_id=716467487]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -52.0
+offset_top = -396.0
+offset_right = 181.0
+offset_bottom = -299.0
+
+[node name="LeftLabel" type="Label" parent="PaneCtrl" unique_id=1336321186]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+text = "100"
+label_settings = SubResource("LabelSettings_mti6b")
+horizontal_alignment = 1
+
+[node name="RightLabel" type="Label" parent="PaneCtrl" unique_id=830897224]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "100"
+label_settings = SubResource("LabelSettings_4kxuq")
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="Left/LeftArea" to="." method="left_body_entered"]
 [connection signal="body_exited" from="Left/LeftArea" to="." method="left_body_exited"]
