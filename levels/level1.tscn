@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bir30s8sx21tm"]
 
-[ext_resource type="Script" uid="uid://dl544crd4e25e" path="res://main.gd" id="1_cm0pq"]
-[ext_resource type="PackedScene" uid="uid://ctcahmejvpesq" path="res://Scales.tscn" id="1_r0du0"]
-[ext_resource type="PackedScene" uid="uid://bi36r70v54ufc" path="res://weights/Weight_1.tscn" id="3_fos0i"]
-[ext_resource type="Texture2D" uid="uid://cynrff6ojansm" path="res://icon.svg" id="5_fos0i"]
-[ext_resource type="PackedScene" uid="uid://b2nplwi1dsrn" path="res://weights/Weight_2.tscn" id="6_trn2v"]
-[ext_resource type="PackedScene" uid="uid://blidhacohsjf8" path="res://weights/Weight_5.tscn" id="7_03owx"]
-[ext_resource type="PackedScene" uid="uid://cibc86diatw7f" path="res://weights/Weight_10.tscn" id="8_wkp8b"]
+[ext_resource type="Script" uid="uid://dl544crd4e25e" path="res://levels/levels.gd" id="1_8hd6v"]
+[ext_resource type="PackedScene" uid="uid://ctcahmejvpesq" path="res://Scales.tscn" id="2_045es"]
+[ext_resource type="Texture2D" uid="uid://cynrff6ojansm" path="res://icon.svg" id="3_omn1t"]
+[ext_resource type="PackedScene" uid="uid://bi36r70v54ufc" path="res://weights/Weight_1.tscn" id="4_lf3p4"]
+[ext_resource type="PackedScene" uid="uid://b2nplwi1dsrn" path="res://weights/Weight_2.tscn" id="5_yydhl"]
+[ext_resource type="PackedScene" uid="uid://cibc86diatw7f" path="res://weights/Weight_10.tscn" id="6_bekh1"]
+[ext_resource type="PackedScene" uid="uid://blidhacohsjf8" path="res://weights/Weight_5.tscn" id="7_8bcou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
 size = Vector2(1243, 58)
@@ -18,9 +18,9 @@ size = Vector2(45, 732.5)
 size = Vector2(1244, 32)
 
 [node name="Main" type="Node" unique_id=1513999430]
-script = ExtResource("1_cm0pq")
+script = ExtResource("1_8hd6v")
 
-[node name="Scales" parent="." unique_id=1481644881 instance=ExtResource("1_r0du0")]
+[node name="Scales" parent="." unique_id=1481644881 instance=ExtResource("2_045es")]
 position = Vector2(511, 630)
 
 [node name="Wall" type="StaticBody2D" parent="." unique_id=1032866388]
@@ -31,7 +31,7 @@ collision_mask = 3
 [node name="Sprite2D" type="Sprite2D" parent="Wall" unique_id=1448277817]
 position = Vector2(453, 9)
 scale = Vector2(9.609375, 1)
-texture = ExtResource("5_fos0i")
+texture = ExtResource("3_omn1t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=33862713]
 position = Vector2(443.5, -26)
@@ -49,18 +49,18 @@ shape = SubResource("RectangleShape2D_mti6b")
 position = Vector2(441, -701)
 shape = SubResource("RectangleShape2D_mm1bc")
 
-[node name="Weight" parent="." unique_id=686757871 instance=ExtResource("3_fos0i")]
+[node name="Weight" parent="." unique_id=686757871 instance=ExtResource("4_lf3p4")]
 position = Vector2(123, 604)
 active = true
 
-[node name="Weight2" parent="." unique_id=966107690 instance=ExtResource("6_trn2v")]
+[node name="Weight2" parent="." unique_id=966107690 instance=ExtResource("5_yydhl")]
 position = Vector2(164, 598)
 active = true
 
-[node name="Weight4" parent="." unique_id=346122551 instance=ExtResource("8_wkp8b")]
+[node name="Weight4" parent="." unique_id=346122551 instance=ExtResource("6_bekh1")]
 position = Vector2(270, 581)
 active = true
 
-[node name="Weight3" parent="." unique_id=1124429163 instance=ExtResource("7_03owx")]
+[node name="Weight3" parent="." unique_id=1124429163 instance=ExtResource("7_8bcou")]
 position = Vector2(212, 590)
 active = true

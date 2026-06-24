@@ -1,6 +1,7 @@
 extends Node
 
 var captured_body = null
+@export var next_level: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

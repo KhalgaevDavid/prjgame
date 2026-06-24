@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 
 
 func next_scene() -> void:
-	GameController.replace_scene("res://Main.tscn")
+	GameController.replace_scene("res://levels/level1.tscn")
