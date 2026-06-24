@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://pc6n5tcd6h04"]
+
+[ext_resource type="Script" uid="uid://b22pbiosc6hla" path="res://game_controller.gd" id="1_3iy47"]
+[ext_resource type="PackedScene" uid="uid://dlg0y07dbmyu5" path="res://Intro.tscn" id="2_soqow"]
+
+[node name="GameController" type="Node" unique_id=1974489769]
+script = ExtResource("1_3iy47")
+
+[node name="SceneHolder" type="Node" parent="." unique_id=353360935]
+
+[node name="Intro" parent="SceneHolder" unique_id=408000121 instance=ExtResource("2_soqow")]

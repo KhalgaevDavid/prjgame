@@ -1,5 +1,6 @@
 extends Control
 
+@onready var GameController = $"../../"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,8 +11,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-var next_scene_l = preload("res://Main.tscn").instantiate()
 
 func next_scene() -> void:
-	get_tree().root.add_child(next_scene_l)
-	get_node("/root/Intro").queue_free()
+	GameController.replace_scene("res://Main.tscn")

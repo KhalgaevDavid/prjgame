@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="prjgame"
-run/main_scene="uid://bir30s8sx21tm"
+run/main_scene="uid://pc6n5tcd6h04"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
