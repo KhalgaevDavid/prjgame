@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://ctcahmejvpesq"]
 
-[ext_resource type="Script" uid="uid://nlx21pcm00bw" path="res://scales.gd" id="1_gjmbn"]
-[ext_resource type="Texture2D" uid="uid://b5b52g7wb3l5j" path="res://assets/весы_пр.png" id="1_w61ta"]
-[ext_resource type="Texture2D" uid="uid://c2mkytunusvk0" path="res://assets/весы_лв.png" id="2_gjmbn"]
-[ext_resource type="Texture2D" uid="uid://b2i4ibpk4txb0" path="res://assets/весы.png" id="3_v1k3y"]
+[ext_resource type="Script" uid="uid://bw6kl4fel544r" path="res://scales.gd" id="1_gjmbn"]
+[ext_resource type="Texture2D" uid="uid://cp81u7xgn7rvv" path="res://assets/весы_пр.png" id="1_w61ta"]
+[ext_resource type="Texture2D" uid="uid://dx2v3agu4p5gp" path="res://assets/весы_лв.png" id="2_gjmbn"]
+[ext_resource type="Texture2D" uid="uid://bn65n06c8equn" path="res://assets/весы.png" id="3_v1k3y"]
+[ext_resource type="Texture2D" uid="uid://dqo026imm828a" path="res://assets/arrow.png" id="5_v1k3y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tlm4k"]
 radius = 13.0
@@ -12,17 +13,17 @@ height = 249.99998
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1k3y"]
 size = Vector2(251, 18)
 
+[sub_resource type="LabelSettings" id="LabelSettings_gjmbn"]
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mg5fl"]
 radius = 14.0
 height = 122.000015
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjmbn"]
 size = Vector2(122, 20)
-
-[sub_resource type="LabelSettings" id="LabelSettings_gjmbn"]
-font_size = 64
-font_color = Color(0, 0, 0, 1)
-outline_color = Color(0, 0, 0, 1)
 
 [node name="Scales" type="Node2D" unique_id=1481644881]
 script = ExtResource("1_gjmbn")
@@ -46,6 +47,23 @@ collision_mask = 2
 position = Vector2(-119.5, -133)
 shape = SubResource("RectangleShape2D_v1k3y")
 
+[node name="Mass" type="Label" parent="Left" unique_id=1283248021]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -473.0
+offset_top = -237.0
+offset_right = -240.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_gjmbn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Right" type="StaticBody2D" parent="." unique_id=1099176473]
 
 [node name="Sprite2D" type="Sprite2D" parent="Right" unique_id=878093688]
@@ -65,26 +83,34 @@ collision_mask = 2
 position = Vector2(181, -130)
 shape = SubResource("RectangleShape2D_gjmbn")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1249069290]
-position = Vector2(0, -273)
-texture = ExtResource("3_v1k3y")
-
-[node name="Label" type="Label" parent="." unique_id=628698073]
+[node name="Mass" type="Label" parent="Right" unique_id=628698073]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -51.0
-offset_top = -392.0
-offset_right = 182.0
-offset_bottom = -304.0
+offset_left = 283.0
+offset_top = -241.0
+offset_right = 516.0
+offset_bottom = -153.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "0"
 label_settings = SubResource("LabelSettings_gjmbn")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1249069290]
+position = Vector2(0, -273)
+texture = ExtResource("3_v1k3y")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2125235516]
+position = Vector2(68, -312)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1982106653]
+position = Vector2(-195, -223)
+scale = Vector2(0.5125, 0.25666666)
+texture = ExtResource("5_v1k3y")
 
 [connection signal="body_entered" from="Left/LeftArea" to="." method="left_body_entered"]
 [connection signal="body_exited" from="Left/LeftArea" to="." method="left_body_exited"]
